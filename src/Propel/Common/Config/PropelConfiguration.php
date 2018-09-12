@@ -114,6 +114,7 @@ class PropelConfiguration implements ConfigurationInterface
                                         ->cannotBeEmpty()
                                         ->values(['mysql', 'pgsql', 'sqlite', 'mssql', 'sqlsrv', 'oracle'])
                                     ->end()
+                                    ->scalarNode('adapterClass')->defaultNull()->end()
                                     ->scalarNode('dsn')->isRequired()->cannotBeEmpty()->end()
                                     ->scalarNode('user')->isRequired()->end()
                                     ->scalarNode('password')->isRequired()->treatNullLike('')->end()
